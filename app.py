@@ -41,3 +41,20 @@ ax.set_xlabel("日付")
 ax.set_ylabel("売上")
 ax.set_title("売上推移")
 st.pyplot(fig)
+
+# パスワード入力欄（非表示）
+password = st.text_input("パスワードを入力してください：", type="password")
+
+# 正しいパスワードをここに設定
+correct_password = "secret123"
+
+# 認証チェック
+if password != correct_password:
+    st.warning("正しいパスワードを入力してください。")
+    st.stop()
+
+# 認証成功後の表示
+st.success("認証に成功しました！ようこそ！")
+
+# ↓ここにアプリ本体の処理を書く
+st.write("このセクションは認証されたユーザーのみが閲覧できます。")
